@@ -14,7 +14,7 @@ from statsmodels.nonparametric.smoothers_lowess import lowess
 
 # 保留你提供的這部分
 repository_input1 = r'D:\Desktop\碩士檔\質譜分析實驗室\實驗資料\Metabolites_data\MSDIAL\excel\msp_match_5_1\20231222_SP_Amide_10mMAmF_0.125_FA_POS_SWATH_oldlib\dot_product_450_0_630'
-relative_path1 = r'ALL_match_Feature_MS_DIAL_Ref_Sug_cpn_dot_product_450_0_630.xlsx'
+relative_path1 = r'ALL_match_Feature_MS_DIAL_Ref_Sug_cpn_dot_product_430_0_600.xlsx'
 file_path1 = os.path.join(repository_input1, relative_path1)
 sheet_name1 = 'Fn_ID_RT_MZ_CPN_Int'
 Filename_PeakID_RT_MZ_Intensity = pd.read_excel(file_path1, sheet_name=sheet_name1, header=None)
@@ -142,7 +142,7 @@ Filename_PeakID_RT_MZ_Batch_effect_internal_scaled = concentration_transform(Fil
 Filename_PeakID_RT_MZ_Batch_effect_internal_QC_SP_scaled = concentration_transform(Filename_PeakID_RT_MZ_Batch_effect_internal_QC_SP)
 
 repository_output = r'D:\Desktop\碩士檔\質譜分析實驗室\實驗資料\Metabolites_data\MSDIAL\excel\msp_match_5_1\20231222_SP_Amide_10mMAmF_0.125_FA_POS_SWATH_oldlib\dot_product_430_0_600_compound_name'
-Relative_path = f'ALL_match_Feature_MD_RS_bei_cpn_ISconc_{log_peak_area_filename}trend_bkqc_wpr_dot_product_450_0_630.xlsx'
+Relative_path = f'ALL_match_Feature_MD_RS_bei_cpn_ISconc_{log_peak_area_filename}trend_bkqc_wpr_dot_product_430_0_600.xlsx'
 result_path = os.path.join(repository_output, Relative_path)
 with pd.ExcelWriter(result_path) as writer:
     pd.DataFrame(corrected_SP_array).to_excel(writer, sheet_name='Batch_effect_internal', index=False, header=False)
